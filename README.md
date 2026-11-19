@@ -61,6 +61,47 @@ Para ejecutar las pruebas:
 dart test
 ```
 
+Laboratorio 04: Programación orientada a objetos
+
+Desarrollo de ejercicios prácticos aplicando clases, objetos, constructores, encapsulamiento, getters y composición.
+
+Se incluyen dos proyectos integradores:
+
+AgroDiversa orientada a objetos: gestión de observaciones agrícolas mediante las clases CropArea, AgriculturalRecord y ObservationCatalog.
+
+Sistema de alquiler de bicicletas: registro de bicicletas, gestión de alquileres, control de disponibilidad y cálculo de ingresos.
+
+Ejecutar AgroDiversa orientada a objetos:
+
+cd lab-04/dart_lab_04
+dart run bin/agricultural_catalog_oop.dart
+
+Ejecutar el sistema de alquiler de bicicletas:
+
+dart run bin/bicycle_rental_system.dart
+
+Requisitos
+
+Tener instalado Dart SDK.
+
+Tener Git instalado para clonar y gestionar el repositorio.
+
+Verificación
+
+Para analizar el código del Laboratorio 03:
+
+cd lab-03/dart_lab_03
+dart analyze
+
+Para analizar el código del Laboratorio 04:
+
+cd lab-04/dart_lab_04
+dart analyze
+
+Para ejecutar las pruebas del proyecto:
+
+dart test
+
 ---
 
 **Autor:** Fhellips  
