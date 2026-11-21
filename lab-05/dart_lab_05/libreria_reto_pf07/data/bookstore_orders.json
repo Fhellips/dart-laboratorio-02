@@ -1,0 +1,25 @@
+[
+  {
+    "id": "ORD-001",
+    "customerName": "Laura Gómez",
+    "products": [
+      {"name": "Clean Code", "quantity": 2, "unitPrice": 85000.0},
+      {"name": "The Pragmatic Programmer", "quantity": 1, "unitPrice": 110000.0}
+    ]
+  },
+  {
+    "id": "ORD-002",
+    "customerName": "Andrés Pérez",
+    "products": [
+      {"name": "Dart in Action", "quantity": 3, "unitPrice": 72000.0}
+    ]
+  },
+  {
+    "id": "ORD-003",
+    "customerName": "Camila Ruiz",
+    "products": [
+      {"name": "Design Patterns", "quantity": 1, "unitPrice": 95000.0},
+      {"name": "Refactoring", "quantity": 1, "unitPrice": 88000.0}
+    ]
+  }
+]

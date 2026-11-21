@@ -1,0 +1,115 @@
+class CropArea {
+  final String name;
+  final double plantedArea;
+
+  CropArea({required this.name, required this.plantedArea});
+
+  String describe() {
+    return '$name: $plantedArea ha';
+  }
+}
+
+void main() {
+  CropArea coffee = CropArea(name: 'Coffee', plantedArea: 125.0);
+  CropArea beans = CropArea(name: 'Beans', plantedArea: 40.0);
+
+  print(coffee.describe());
+  print(beans.describe());
+}
+
+abstract class Report {
+  String get title;
+
+  String describe() {
+    return 'Report: $title';
+  }
+}
+
+class MunicipalReport extends Report {
+  @override
+  final String title;
+
+  MunicipalReport(this.title);
+}
+
+void main() {
+  Report report = MunicipalReport('Andes 2025');
+  print(report.describe());
+}
+
+abstract class Report {
+  String describe();
+}
+
+class CompactReport extends Report {
+  @override
+  String describe() => 'Compact report';
+}
+
+class DetailedReport extends Report {
+  @override
+  String describe() => 'Detailed report';
+}
+
+void showDescription(Report report) {
+  print(report.describe());
+}
+
+void main() {
+  showDescription(CompactReport());
+  showDescription(DetailedReport());
+}
+
+abstract interface class ReportFormatter {
+  String format(String title, double area);
+}
+
+class CompactFormatter implements ReportFormatter {
+  @override
+  String format(String title, double area) {
+    String value = area.toStringAsFixed(2);
+    return '$title: $value ha';
+  }
+}
+
+class VerboseFormatter implements ReportFormatter {
+  @override
+  String format(String title, double area) {
+    String value = area.toStringAsFixed(2);
+    return 'Observation $title reports $value hectares.';
+  }
+}
+
+void main() {
+  ReportFormatter formatter = CompactFormatter();
+  print(formatter.format('Andes 2025', 125.0));
+
+  formatter = VerboseFormatter();
+  print(formatter.format('Andes 2025', 125.0));
+}
+
+abstract interface class ReportFormatter {
+  String format(String title, double area);
+}
+
+class CompactFormatter implements ReportFormatter {
+  @override
+  String format(String title, double area) {
+    return '$title: $area ha';
+  }
+}
+
+class ReportPrinter {
+  final ReportFormatter formatter;
+
+  ReportPrinter(this.formatter);
+
+  void printReport(String title, double area) {
+    print(formatter.format(title, area));
+  }
+}
+
+void main() {
+  ReportPrinter printer = ReportPrinter(CompactFormatter());
+  printer.printReport('Andes 2025', 125.0);
+}

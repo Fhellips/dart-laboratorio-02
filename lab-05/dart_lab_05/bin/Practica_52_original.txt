@@ -1,0 +1,91 @@
+void main() {
+  String? note;
+  String? reviewedNote = 'Verified manually';
+
+  print(note ?? 'No note available');
+  print(reviewedNote ?? 'No note available');
+}
+
+void showMunicipality(String? municipality) {
+  if (municipality == null) {
+    print('Municipality is missing.');
+    return;
+  }
+
+  print(municipality.trim().toLowerCase());
+}
+
+void main() {
+  showMunicipality(null);
+  showMunicipality(' Andes ');
+}
+
+void main() {
+  double? area = double.tryParse('NaN');
+
+  if (area == null || !area.isFinite || area <= 0) {
+    print('Enter a positive finite area.');
+  } else {
+    print('Accepted area: $area');
+  }
+}
+
+class CropArea {
+  final String name;
+  final double plantedArea;
+
+  CropArea({required String name, required this.plantedArea})
+    : name = name.trim() {
+    if (this.name.isEmpty) {
+      throw FormatException('Crop name must not be empty.');
+    }
+
+    if (!plantedArea.isFinite || plantedArea <= 0) {
+      throw FormatException('Planted area must be positive and finite.');
+    }
+  }
+}
+
+void main() {
+  CropArea crop = CropArea(name: ' Coffee ', plantedArea: 125.0);
+  print(crop.name);
+}
+
+class CropArea {
+  final String name;
+  final double plantedArea;
+
+  CropArea({required String name, required this.plantedArea})
+    : name = name.trim() {
+    if (this.name.isEmpty) {
+      throw FormatException('Crop name must not be empty.');
+    }
+    if (!plantedArea.isFinite || plantedArea <= 0) {
+      throw FormatException('Planted area must be positive and finite.');
+    }
+  }
+}
+
+void main() {
+  try {
+    CropArea crop = CropArea(name: '', plantedArea: 12.5);
+    print(crop.name);
+  } on FormatException catch (error) {
+    print('Invalid crop: ' + error.message);
+  }
+}
+
+void parseYear(String text) {
+  try {
+    print(int.parse(text));
+  } on FormatException {
+    print('Invalid year format.');
+  } finally {
+    print('Parsing attempt finished.');
+  }
+}
+
+void main() {
+  parseYear('2025');
+  parseYear('invalid');
+}
